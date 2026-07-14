@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Business Name</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #f5f7fa;
+            color: #333;
+
+        }
+
+        header {
+            background: #2563eb;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #1e40af;
+            text-align: center;
+            padding: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        footer {
+            background: #222;
+            color: #ddd;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .contact p {
+            margin: 8px 0;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            background: #2563eb;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Your Business Name</h1>
+    <p>Professional • Reliable • Local</p>
+
+    <a class="button" href="#contact">Contact Us</a>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            Welcome to <strong>Your Business Name</strong>. We provide quality
+            services with a focus on excellent customer service, reliability,
+            and value. Replace this text with a short description of your
+            business.
+        </p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+
+        <div class="services">
+            <div class="card">
+                <h3>Service One</h3>
+                <p>Short description of your first service.</p>
+            </div>
+
+            <div class="card">
+                <h3>Service Two</h3>
+                <p>Short description of your second service.</p>
+            </div>
+
+            <div class="card">
+                <h3>Service Three</h3>
+                <p>Short description of your third service.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+
+        <p><strong>Phone:</strong> (000) 000 0000</p>
+        <p><strong>Email:</strong> your@email.com</p>
+        <p><strong>Address:</strong> Your Business Address</p>
+
+        <a class="button" href="mailto:your@email.com">
+            Send an Email
+        </a>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Your Business Name. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
