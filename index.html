@@ -130,7 +130,7 @@
         }
         .hero-subtitle {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.45rem;
             font-weight: 400;
             letter-spacing: 0.18em;
             color: var(--text-gold);
@@ -198,6 +198,17 @@
         .btn:hover {
             background: var(--text-gold);
             color: var(--bg-dark);
+        }
+        .btn-icon {
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            margin-right: 6px;
+            opacity: 0.85;
+            transition: opacity 0.3s ease;
+        }
+        .btn:hover .btn-icon {
+            opacity: 1;
         }
         .btn-filled {
             background: var(--text-gold);
@@ -402,6 +413,13 @@
             margin-right: 6px;
             font-size: 1rem;
         }
+        .inline-icon {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 6px;
+            opacity: 0.85;
+        }
 
         /* ── Contact ──────────────────────────────────────────── */
         .contact-grid {
@@ -453,7 +471,9 @@
             opacity: 0.7;
         }
         .social-icon {
-            font-size: 1.3rem;
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
         }
 
         /* ── Footer ──────────────────────────────────────────── */
@@ -576,7 +596,7 @@
             </div>
             <div style="text-align:center;">
                 <img
-                    src="images/high-res.png"
+                    src="images/high-res-cropped.png"
                     alt="Halo Hairplay relaxation session"
                     style="width:100%; max-width:400px; border-radius:8px; opacity:0.9;"
                     onerror="this.style.display='none'"
@@ -640,7 +660,7 @@
 </section>
 
 <!-- ── Benefits ────────────────────────────────────────────── -->
-<section id="benefits" class="section-alt" style="padding-top:0;">
+<section id="benefits" style="padding-top:0;">
     <div class="container section-center">
         <h2>Every Session Includes</h2>
 
@@ -697,7 +717,7 @@
                 </div>
                 <div class="contact-item">
                     <p class="label">Service Area</p>
-                    <p class="value">Mobile — I come to you across Gold Coast</p>
+                    <p class="value"><img src="images/car.png" alt="" class="inline-icon" /> Mobile - Anywhere on the Gold Coast!</p>
                 </div>
             </div>
 
@@ -712,7 +732,7 @@
                         rel="noopener"
                         class="social-link"
                     >
-                        <span class="social-icon">f</span> @halohairplay
+                        <img class="social-icon" src="images/facebook.png" alt="Facebook" /> @halohairplay
                     </a>
                     <a
                         href="https://instagram.com/halohairplay"
@@ -720,12 +740,12 @@
                         rel="noopener"
                         class="social-link"
                     >
-                        <span class="social-icon">&#x2661;</span> @halohairplay
+                        <img class="social-icon" src="images/instagram.png" alt="Instagram" /> @halohairplay
                     </a>
                 </div>
 
                 <a href="mailto:halohairplay@gmail.com" class="btn" style="margin-top:30px;">
-                    Send an Email
+                    <img src="images/email.png" alt="" class="btn-icon" /> Send an Email
                 </a>
             </div>
         </div>
