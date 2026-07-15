@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Halo Hairplay — mobile relaxation through the art of hairplay. Gentle touch, deep calm, delivered to your door." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&amp;display=swap" rel="stylesheet" />
     <title>Halo Hairplay | Relaxation Through the Art of Touch</title>
 
     <style>
@@ -125,34 +128,55 @@
             margin-bottom: 30px;
             filter: drop-shadow(var(--gold-glow));
         }
-        .hero h1 {
-            margin-bottom: 14px;
-        }
-        .hero .subhead {
-            font-size: 1.35rem;
-            color: var(--text-grey);
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            color: var(--text-gold);
             margin-bottom: 8px;
+            text-transform: uppercase;
         }
-        .taglines {
-            margin-top: 40px;
+        .hero-cursive {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--text-grey);
+            margin-bottom: 38px;
+            opacity: 0.8;
+        }
+        .hero-icons {
+            display: flex;
+            justify-content: center;
+            gap: 36px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+        .hero-icon-item {
             display: flex;
             flex-direction: column;
-            gap: 16px;
             align-items: center;
+            gap: 10px;
+            width: 120px;
         }
-        .tagline {
-            font-size: 1.05rem;
-            color: var(--text-gold);
-            font-style: italic;
-            max-width: 550px;
-            line-height: 1.6;
+        .hero-icon-item img {
+            width: 44px;
+            height: 44px;
             opacity: 0.85;
+            transition: opacity 0.3s ease;
         }
-        .tagline-divider {
-            width: 60px;
-            height: 1px;
-            background: var(--text-gold);
-            opacity: 0.3;
+        .hero-icon-item img:hover {
+            opacity: 1;
+        }
+        .hero-icon-item span {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            color: var(--text-grey);
+            text-align: center;
+            line-height: 1.5;
+            text-transform: uppercase;
         }
 
         /* ── Buttons ──────────────────────────────────────────── */
@@ -453,7 +477,12 @@
 
             .hero { padding: 60px 20px 50px; }
             .hero-logo { height: 80px; }
-            .tagline { font-size: 0.95rem; }
+            .hero-subtitle { font-size: 0.95rem; letter-spacing: 0.12em; }
+            .hero-cursive { font-size: 0.9rem; margin-bottom: 28px; }
+            .hero-icons { gap: 14px; margin-bottom: 24px; }
+            .hero-icon-item { width: 75px; gap: 6px; }
+            .hero-icon-item img { width: 32px; height: 32px; }
+            .hero-icon-item span { font-size: 0.58rem; letter-spacing: 0.06em; }
 
             .about-grid,
             .contact-grid {
@@ -494,26 +523,31 @@
 <!-- ── Hero ────────────────────────────────────────────────── -->
 <section class="hero" id="hero">
     <img
-        src="images/logo.png"
+        src="images/logo-header-transparent.png"
         alt="Halo Hairplay"
         class="hero-logo"
-        onerror="this.style.display='none'"
     />
 
-    <h1>Halo Hairplay</h1>
-    <p class="subhead">Mobile Relaxation &middot; The Art of Gentle Touch</p>
+    <p class="hero-subtitle">A Calming Escape</p>
+    <p class="hero-cursive">through the power of touch</p>
 
-    <span class="badge">
-        <span class="icon-mobile">&#9992;</span> I come to you
-    </span>
-
-    <div class="taglines">
-        <span class="tagline-divider"></span>
-        <p class="tagline">Let your worries unravel — one gentle stroke at a time.</p>
-        <span class="tagline-divider"></span>
-        <p class="tagline">The art of touch. The luxury of stillness.</p>
-        <span class="tagline-divider"></span>
-        <p class="tagline">Drift into deep calm. Wake renewed.</p>
+    <div class="hero-icons">
+        <div class="hero-icon-item">
+            <img src="images/mind.png" alt="Soothe Your Mind" />
+            <span>Soothe Your Mind</span>
+        </div>
+        <div class="hero-icon-item">
+            <img src="images/heart.png" alt="Relax Your Body" />
+            <span>Relax Your Body</span>
+        </div>
+        <div class="hero-icon-item">
+            <img src="images/stars.png" alt="Restore Your Energy" />
+            <span>Restore Your Energy</span>
+        </div>
+        <div class="hero-icon-item">
+            <img src="images/leaf.png" alt="Find Your Balance" />
+            <span>Find Your Balance</span>
+        </div>
     </div>
 
     <a href="#pricing" class="btn-filled btn">View Sessions</a>
