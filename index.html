@@ -3,175 +3,737 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Business Name</title>
+    <meta name="description" content="Halo Hairplay — mobile relaxation through the art of hairplay. Gentle touch, deep calm, delivered to your door." />
+    <title>Halo Hairplay | Relaxation Through the Art of Touch</title>
 
     <style>
-        * {
+        /* ── Reset ────────────────────────────────────────────── */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* ── Colour Palette ───────────────────────────────────── */
+        :root {
+            --bg-dark:    #090909;
+            --bg-mid:     #282421;
+            --text-gold:  #E8B8A0;
+            --text-grey:  #C3BEBB;
+            --gold-dim:   rgba(232, 184, 160, 0.15);
+            --gold-glow:  0 0 30px rgba(232, 184, 160, 0.25);
+        }
+
+        /* ── Base ─────────────────────────────────────────────── */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            background: #f5f7fa;
-            color: #333;
-
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.75;
+            background: var(--bg-dark);
+            color: var(--text-grey);
+            -webkit-font-smoothing: antialiased;
         }
 
-        header {
-            background: #2563eb;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
+        /* ── Typography ───────────────────────────────────────── */
+        h1, h2, h3, .tagline, .nav-links a, .btn {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+        h1 { font-size: 2.8rem; color: var(--text-gold); }
+        h2 {
+            font-size: 2rem;
+            color: var(--text-gold);
+            margin-bottom: 1.2rem;
+            position: relative;
+            display: inline-block;
         }
-
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.95;
+        h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 2px;
+            background: var(--text-gold);
+            margin-top: 0.4rem;
+            opacity: 0.5;
         }
+        h3 { font-size: 1.25rem; color: var(--text-gold); }
 
-        nav {
-            background: #1e40af;
-            text-align: center;
-            padding: 12px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
+        /* ── Layout ───────────────────────────────────────────── */
         .container {
             max-width: 1000px;
-            margin: auto;
-            padding: 40px 20px;
+            margin: 0 auto;
+            padding: 60px 24px;
         }
 
-        section {
-            margin-bottom: 50px;
+        /* ── Navigation ───────────────────────────────────────── */
+        nav {
+            background: var(--bg-mid);
+            border-bottom: 1px solid rgba(232, 184, 160, 0.1);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
         }
-
-        h2 {
-            color: #2563eb;
-            margin-bottom: 15px;
+        .nav-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+        .nav-logo {
+            height: 44px;
+            width: auto;
         }
-
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
         }
-
-        footer {
-            background: #222;
-            color: #ddd;
-            text-align: center;
-            padding: 25px;
-        }
-
-        .contact p {
-            margin: 8px 0;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            background: #2563eb;
-            color: white;
-            padding: 12px 22px;
-            border-radius: 6px;
+        .nav-links a {
+            color: var(--text-grey);
             text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .nav-links a:hover {
+            color: var(--text-gold);
         }
 
-        .button:hover {
-            background: #1d4ed8;
+        /* ── Hero ─────────────────────────────────────────────── */
+        .hero {
+            text-align: center;
+            padding: 100px 24px 80px;
+            background:
+                radial-gradient(ellipse at 50% 30%, var(--gold-dim) 0%, transparent 60%),
+                var(--bg-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-logo {
+            height: 120px;
+            width: auto;
+            margin-bottom: 30px;
+            filter: drop-shadow(var(--gold-glow));
+        }
+        .hero h1 {
+            margin-bottom: 14px;
+        }
+        .hero .subhead {
+            font-size: 1.35rem;
+            color: var(--text-grey);
+            margin-bottom: 8px;
+        }
+        .taglines {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+        .tagline {
+            font-size: 1.05rem;
+            color: var(--text-gold);
+            font-style: italic;
+            max-width: 550px;
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+        .tagline-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--text-gold);
+            opacity: 0.3;
+        }
+
+        /* ── Buttons ──────────────────────────────────────────── */
+        .btn {
+            display: inline-block;
+            padding: 14px 38px;
+            border: 1px solid var(--text-gold);
+            color: var(--text-gold);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: all 0.35s ease;
+            margin-top: 36px;
+            background: transparent;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: var(--text-gold);
+            color: var(--bg-dark);
+        }
+        .btn-filled {
+            background: var(--text-gold);
+            color: var(--bg-dark);
+            border: 1px solid var(--text-gold);
+        }
+        .btn-filled:hover {
+            background: transparent;
+            color: var(--text-gold);
+        }
+
+        /* ── Sections ─────────────────────────────────────────── */
+        section {
+            margin-bottom: 20px;
+        }
+        .section-alt {
+            background: var(--bg-mid);
+        }
+        .section-center {
+            text-align: center;
+        }
+        .section-center h2::after {
+            left: 25%;
+        }
+
+        /* ── About ────────────────────────────────────────────── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .about-text p {
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+        }
+
+        /* ── Pricing Cards ────────────────────────────────────── */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 36px;
+        }
+        .pricing-card {
+            background: var(--bg-mid);
+            border: 1px solid rgba(232, 184, 160, 0.12);
+            border-radius: 8px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: border-color 0.4s ease, transform 0.3s ease;
+            position: relative;
+        }
+        .pricing-card:hover {
+            border-color: var(--text-gold);
+            transform: translateY(-4px);
+        }
+        .pricing-card.featured {
+            border-color: var(--text-gold);
+            box-shadow: var(--gold-glow);
+        }
+        .pricing-card .duration {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-grey);
+            margin-bottom: 8px;
+        }
+        .pricing-card .price {
+            font-size: 2.6rem;
+            color: var(--text-gold);
+            margin-bottom: 4px;
+        }
+        .pricing-card .session-type {
+            font-size: 0.9rem;
+            color: var(--text-grey);
+            margin-bottom: 20px;
+        }
+        .pricing-card .perk {
+            font-size: 0.88rem;
+            color: var(--text-grey);
+            margin-bottom: 6px;
+            opacity: 0.75;
+        }
+
+        .pricing-card .card-quote {
+            font-size: 0.9rem;
+            color: var(--text-gold);
+            font-style: italic;
+            margin-bottom: 18px;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+
+        /* ── Ultimate Card ───────────────────────────────────── */
+        .ultimate-card {
+            background: var(--bg-mid);
+            border: 1px solid var(--text-gold);
+            border-radius: 8px;
+            padding: 40px 32px;
+            margin-top: 32px;
+            text-align: center;
+            box-shadow: var(--gold-glow);
+            position: relative;
+        }
+        .ultimate-badge {
+            display: inline-block;
+            background: var(--text-gold);
+            color: var(--bg-dark);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .ultimate-title {
+            font-size: 1.5rem;
+            color: var(--text-gold);
+            margin-bottom: 6px;
+        }
+        .ultimate-duration {
+            font-size: 0.95rem;
+            color: var(--text-grey);
+            margin-bottom: 16px;
+            letter-spacing: 0.04em;
+        }
+        .ultimate-quote {
+            font-size: 0.95rem;
+            color: var(--text-gold);
+            font-style: italic;
+            max-width: 550px;
+            margin: 0 auto 22px;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+        .ultimate-pricing {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .price-old {
+            font-size: 1.3rem;
+            color: var(--text-grey);
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        .price-launch {
+            font-size: 1.4rem;
+            color: var(--text-gold);
+            letter-spacing: 0.04em;
+        }
+
+        /* ── Benefits Grid ───────────────────────────────────── */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin-top: 36px;
+        }
+        .benefit-card {
+            background: var(--bg-mid);
+            border: 1px solid rgba(232, 184, 160, 0.1);
+            border-radius: 8px;
+            padding: 28px 16px;
+            text-align: center;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+        .benefit-card:hover {
+            border-color: var(--text-gold);
+            transform: translateY(-2px);
+        }
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 14px;
+        }
+        .benefit-label {
+            font-size: 0.85rem;
+            color: var(--text-gold);
+            letter-spacing: 0.03em;
+            line-height: 1.4;
+        }
+
+        /* ── Badge for mobile ────────────────────────────────── */
+        .badge {
+            display: inline-block;
+            background: var(--gold-dim);
+            color: var(--text-gold);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+        .icon-mobile {
+            display: inline-block;
+            margin-right: 6px;
+            font-size: 1rem;
+        }
+
+        /* ── Contact ──────────────────────────────────────────── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .contact-item {
+            margin-bottom: 24px;
+        }
+        .contact-item .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-gold);
+            margin-bottom: 4px;
+        }
+        .contact-item .value {
+            font-size: 1.1rem;
+            color: var(--text-grey);
+        }
+        .contact-item a {
+            color: var(--text-gold);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        .contact-item a:hover {
+            opacity: 0.7;
+        }
+
+        /* ── Socials ─────────────────────────────────────────── */
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .social-link {
+            color: var(--text-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .social-link:hover {
+            opacity: 0.7;
+        }
+        .social-icon {
+            font-size: 1.3rem;
+        }
+
+        /* ── Footer ──────────────────────────────────────────── */
+        footer {
+            background: var(--bg-mid);
+            border-top: 1px solid rgba(232, 184, 160, 0.08);
+            text-align: center;
+            padding: 30px 24px;
+            font-size: 0.85rem;
+            color: var(--text-grey);
+            opacity: 0.7;
+        }
+        footer .gold {
+            color: var(--text-gold);
+        }
+
+        /* ── Responsive ───────────────────────────────────────── */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.6rem; }
+
+            .hero { padding: 60px 20px 50px; }
+            .hero-logo { height: 80px; }
+            .tagline { font-size: 0.95rem; }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .nav-links { gap: 14px; }
+            .nav-links a { font-size: 0.8rem; }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Your Business Name</h1>
-    <p>Professional • Reliable • Local</p>
-
-    <a class="button" href="#contact">Contact Us</a>
-</header>
-
+<!-- ── Navigation ──────────────────────────────────────────── -->
 <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-inner">
+        <a href="#hero" style="line-height:0;">
+            <img
+                src="images/logo.jpg"
+                alt="Halo Hairplay"
+                class="nav-logo"
+                onerror="this.style.display='none'"
+            />
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
 </nav>
 
-<div class="container">
+<!-- ── Hero ────────────────────────────────────────────────── -->
+<section class="hero" id="hero">
+    <img
+        src="images/logo.jpg"
+        alt="Halo Hairplay"
+        class="hero-logo"
+        onerror="this.style.display='none'"
+    />
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>
-            Welcome to <strong>Your Business Name</strong>. We provide quality
-            services with a focus on excellent customer service, reliability,
-            and value. Replace this text with a short description of your
-            business.
-        </p>
-    </section>
+    <h1>Halo Hairplay</h1>
+    <p class="subhead">Mobile Relaxation &middot; The Art of Gentle Touch</p>
 
-    <section id="services">
-        <h2>Our Services</h2>
+    <span class="badge">
+        <span class="icon-mobile">&#9992;</span> I come to you
+    </span>
 
-        <div class="services">
-            <div class="card">
-                <h3>Service One</h3>
-                <p>Short description of your first service.</p>
+    <div class="taglines">
+        <span class="tagline-divider"></span>
+        <p class="tagline">Let your worries unravel — one gentle stroke at a time.</p>
+        <span class="tagline-divider"></span>
+        <p class="tagline">The art of touch. The luxury of stillness.</p>
+        <span class="tagline-divider"></span>
+        <p class="tagline">Drift into deep calm. Wake renewed.</p>
+    </div>
+
+    <a href="#pricing" class="btn-filled btn">View Sessions</a>
+</section>
+
+<!-- ── About ───────────────────────────────────────────────── -->
+<section id="about">
+    <div class="container">
+        <h2>About Halo Hairplay</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>
+                    Halo Hairplay is a <strong style="color:var(--text-gold);">mobile relaxation experience</strong>
+                    built around one simple truth — gentle touch heals. We bring the deeply calming ritual
+                    of hairplay directly to your home, creating a sanctuary of stillness wherever you are.
+                </p>
+                <p>
+                    In a world that never stops, Halo Hairplay offers a permission slip to pause.
+                    Close your eyes, let your breathing slow, and allow the soft, rhythmic strokes
+                    through your hair to melt tension you didn't even know you were holding.
+                </p>
+                <p>
+                    No salon chairs. No small talk. No rush. Just you, the quiet,
+                    and the kind of relaxation that lingers long after the session ends.
+                </p>
             </div>
-
-            <div class="card">
-                <h3>Service Two</h3>
-                <p>Short description of your second service.</p>
-            </div>
-
-            <div class="card">
-                <h3>Service Three</h3>
-                <p>Short description of your third service.</p>
+            <div style="text-align:center;">
+                <img
+                    src="images/high-res.png"
+                    alt="Halo Hairplay relaxation session"
+                    style="width:100%; max-width:400px; border-radius:8px; opacity:0.9;"
+                    onerror="this.style.display='none'"
+                />
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
+<!-- ── Pricing ─────────────────────────────────────────────── -->
+<section id="pricing" class="section-alt">
+    <div class="container section-center">
+        <h2>Sessions &amp; Pricing</h2>
+        <p style="margin-bottom:8px; color:var(--text-grey);">
+            All sessions are <strong style="color:var(--text-gold);">mobile</strong> — I come to you.
+        </p>
+        <p style="font-size:0.9rem; color:var(--text-grey); opacity:0.7;">
+            Gold Coast metro &amp; surrounding suburbs
+        </p>
 
-        <p><strong>Phone:</strong> (000) 000 0000</p>
-        <p><strong>Email:</strong> your@email.com</p>
-        <p><strong>Address:</strong> Your Business Address</p>
+        <div class="pricing-grid">
+            <!-- Card 01 — 30 min -->
+            <div class="pricing-card">
+                <p class="duration">30 Mins</p>
+                <p class="session-type">Rest &amp; Relax</p>
+                <p class="card-quote">"A calming introduction to the Halo Hair Play experience."</p>
+                <p class="price">$79</p>
+            </div>
 
-        <a class="button" href="mailto:your@email.com">
-            Send an Email
-        </a>
-    </section>
+            <!-- Card 02 — 60 min (featured) -->
+            <div class="pricing-card featured">
+                <p class="duration">60 Mins</p>
+                <p class="session-type">Restore &amp; Renew</p>
+                <p class="card-quote">"Our signature sensory scalp experience designed to melt away stress."</p>
+                <p class="price">$99</p>
+            </div>
 
-</div>
+            <!-- Card 03 — 90 min -->
+            <div class="pricing-card">
+                <p class="duration">90 Mins</p>
+                <p class="session-type">Escape &amp; Heal</p>
+                <p class="card-quote">"The ultimate Hair Play experience for complete relaxation."</p>
+                <p class="price">$129</p>
+            </div>
+        </div>
 
+        <!-- Ultimate Experience Card -->
+        <div class="ultimate-card">
+            <p class="ultimate-badge">The Ultimate Experience</p>
+            <p class="ultimate-title">Ultimate Relaxation Experience</p>
+            <p class="ultimate-duration">120 Mins &nbsp;|&nbsp; Hair Play + Back Relaxation</p>
+            <p class="ultimate-quote">"A luxurious combination of our signature Hair Play experience with gentle Back Relaxation, creating the ultimate sensory escape for deep rest and relaxation."</p>
+            <div class="ultimate-pricing">
+                <span class="price-old">$169</span>
+                <span class="price-launch">LAUNCH SPECIAL &mdash; $149</span>
+            </div>
+        </div>
+
+        <a href="#contact" class="btn">Book Your Session</a>
+    </div>
+</section>
+
+<!-- ── Benefits ────────────────────────────────────────────── -->
+<section id="benefits" class="section-alt" style="padding-top:0;">
+    <div class="container section-center">
+        <h2>Every Session Includes</h2>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <svg class="benefit-icon" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="28" stroke="var(--text-gold)" stroke-width="1.5" fill="none"/>
+                    <path d="M20 38 Q32 18 44 38" stroke="var(--text-gold)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <circle cx="32" cy="24" r="3" fill="var(--text-gold)" opacity="0.6"/>
+                    <line x1="32" y1="42" x2="32" y2="48" stroke="var(--text-gold)" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="28" y1="54" x2="36" y2="54" stroke="var(--text-gold)" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <p class="benefit-label">Deep Relaxation</p>
+            </div>
+
+            <div class="benefit-card">
+                <svg class="benefit-icon" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="28" stroke="var(--text-gold)" stroke-width="1.5" fill="none"/>
+                    <path d="M20 30 Q26 20 32 30 Q38 20 44 30" stroke="var(--text-gold)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <circle cx="24" cy="28" r="2" fill="var(--text-gold)" opacity="0.6"/>
+                    <circle cx="32" cy="26" r="2" fill="var(--text-gold)" opacity="0.6"/>
+                    <circle cx="40" cy="28" r="2" fill="var(--text-gold)" opacity="0.6"/>
+                    <line x1="32" y1="34" x2="32" y2="46" stroke="var(--text-gold)" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <p class="benefit-label">Improved Scalp Health</p>
+            </div>
+
+            <div class="benefit-card">
+                <svg class="benefit-icon" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="28" stroke="var(--text-gold)" stroke-width="1.5" fill="none"/>
+                    <path d="M24 42 Q24 26 32 22 Q40 26 40 42" stroke="var(--text-gold)" stroke-width="1.5" fill="none"/>
+                    <path d="M28 30 Q32 26 36 30" stroke="var(--text-gold)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <circle cx="32" cy="26" r="2" fill="var(--text-gold)" opacity="0.6"/>
+                    <path d="M22 44 Q32 48 42 44" stroke="var(--text-gold)" stroke-width="1" fill="none" opacity="0.6"/>
+                </svg>
+                <p class="benefit-label">Increased Circulation</p>
+            </div>
+
+            <div class="benefit-card">
+                <svg class="benefit-icon" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="28" stroke="var(--text-gold)" stroke-width="1.5" fill="none"/>
+                    <path d="M22 36 Q32 22 42 36" stroke="var(--text-gold)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <line x1="24" y1="38" x2="20" y2="44" stroke="var(--text-gold)" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="32" y1="34" x2="32" y2="48" stroke="var(--text-gold)" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="40" y1="38" x2="44" y2="44" stroke="var(--text-gold)" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <p class="benefit-label">Relieves Tension &amp; Mental Fatigue</p>
+            </div>
+
+            <div class="benefit-card">
+                <svg class="benefit-icon" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="28" stroke="var(--text-gold)" stroke-width="1.5" fill="none"/>
+                    <path d="M20 30 Q20 20 32 18 Q44 20 44 30 Q44 42 32 48 Q20 42 20 30Z" stroke="var(--text-gold)" stroke-width="1.5" fill="none"/>
+                    <circle cx="32" cy="24" r="4" fill="var(--text-gold)" opacity="0.25"/>
+                    <circle cx="32" cy="38" r="1.5" fill="var(--text-gold)" opacity="0.5"/>
+                    <circle cx="28" cy="42" r="1" fill="var(--text-gold)" opacity="0.4"/>
+                    <circle cx="36" cy="42" r="1" fill="var(--text-gold)" opacity="0.4"/>
+                </svg>
+                <p class="benefit-label">Promotes Better Sleep &amp; Calm</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Contact ─────────────────────────────────────────────── -->
+<section id="contact">
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <p style="margin-bottom:10px; color:var(--text-grey);">
+            Ready to unwind? Reach out and let's find your perfect session.
+        </p>
+
+        <div class="contact-grid">
+            <div>
+                <div class="contact-item">
+                    <p class="label">Phone</p>
+                    <p class="value">
+                        <a href="tel:+61403372284">0403 372 284</a>
+                    </p>
+                </div>
+                <div class="contact-item">
+                    <p class="label">Email</p>
+                    <p class="value">
+                        <a href="mailto:halohairplay@gmail.com">halohairplay@gmail.com</a>
+                    </p>
+                </div>
+                <div class="contact-item">
+                    <p class="label">Service Area</p>
+                    <p class="value">Mobile — I come to you across Gold Coast</p>
+                </div>
+            </div>
+
+            <div>
+                <div class="contact-item">
+                    <p class="label">Follow Halo Hairplay</p>
+                </div>
+                <div class="social-links">
+                    <a
+                        href="https://facebook.com/halohairplay"
+                        target="_blank"
+                        rel="noopener"
+                        class="social-link"
+                    >
+                        <span class="social-icon">f</span> @halohairplay
+                    </a>
+                    <a
+                        href="https://instagram.com/halohairplay"
+                        target="_blank"
+                        rel="noopener"
+                        class="social-link"
+                    >
+                        <span class="social-icon">&#x2661;</span> @halohairplay
+                    </a>
+                </div>
+
+                <a href="mailto:halohairplay@gmail.com" class="btn" style="margin-top:30px;">
+                    Send an Email
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── Footer ──────────────────────────────────────────────── -->
 <footer>
-    <p>&copy; 2026 Your Business Name. All rights reserved.</p>
+    <p>&copy; 2026 <span class="gold">Halo Hairplay</span>. All rights reserved.</p>
+    <p style="margin-top:6px;">Mobile relaxation through the art of gentle touch.</p>
 </footer>
 
 </body>
